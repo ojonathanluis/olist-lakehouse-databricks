@@ -1,0 +1,10 @@
+relationship 2cb85616-4d9b-428e-b7a2-787405900555
+	joinOnDateBehavior: datePartOnly
+	fromColumn: gold_olist_vendas_consolidadas.order_purchase_timestamp
+	toColumn: LocalDateTable_df4a51bd-9b77-4713-b1c9-d4ad3bfff667.Date
+
+relationship a482aa0a-a7a1-4e1c-b3f6-0d33c909c072
+	joinOnDateBehavior: datePartOnly
+	fromColumn: gold_olist_vendas_consolidadas.order_delivered_customer_date
+	toColumn: LocalDateTable_78cf344c-830c-4bbc-bc22-1515df805afe.Date
+

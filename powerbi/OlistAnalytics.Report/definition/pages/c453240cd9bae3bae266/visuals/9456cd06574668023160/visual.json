@@ -1,0 +1,158 @@
+{
+    "$schema":  "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+    "name":  "9456cd06574668023160",
+    "position":  {
+                     "x":  40,
+                     "y":  150,
+                     "z":  3000,
+                     "width":  445,
+                     "height":  150,
+                     "tabOrder":  4
+                 },
+    "visual":  {
+                   "visualType":  "cardVisual",
+                   "query":  {
+                                 "queryState":  {
+                                                    "Data":  {
+                                                                 "projections":  [
+                                                                                     {
+                                                                                         "field":  {
+                                                                                                       "Measure":  {
+                                                                                                                       "Expression":  {
+                                                                                                                                          "SourceRef":  {
+                                                                                                                                                            "Entity":  "gold_olist_vendas_consolidadas"
+                                                                                                                                                        }
+                                                                                                                                      },
+                                                                                                                       "Property":  "Faturamento Total"
+                                                                                                                   }
+                                                                                                   },
+                                                                                         "queryRef":  "gold_olist_vendas_consolidadas.Faturamento Total",
+                                                                                         "nativeQueryRef":  "Faturamento Total",
+                                                                                         "displayName":  "Faturamento Total"
+                                                                                     }
+                                                                                 ]
+                                                             }
+                                                }
+                             },
+                   "objects":  {
+                                   "layout":  [
+                                                  {
+                                                      "properties":  {
+                                                                         "autoGrid":  {
+                                                                                          "expr":  {
+                                                                                                       "Literal":  {
+                                                                                                                       "Value":  "true"
+                                                                                                                   }
+                                                                                                   }
+                                                                                      }
+                                                                     }
+                                                  }
+                                              ]
+                               },
+                   "visualContainerObjects":  {
+                                                  "title":  [
+                                                                {
+                                                                    "properties":  {
+                                                                                       "show":  {
+                                                                                                    "expr":  {
+                                                                                                                 "Literal":  {
+                                                                                                                                 "Value":  "true"
+                                                                                                                             }
+                                                                                                             }
+                                                                                                },
+                                                                                       "text":  {
+                                                                                                    "expr":  {
+                                                                                                                 "Literal":  {
+                                                                                                                                 "Value":  "\u0027Faturamento Total\u0027"
+                                                                                                                             }
+                                                                                                             }
+                                                                                                },
+                                                                                       "fontColor":  {
+                                                                                                         "solid":  {
+                                                                                                                       "color":  {
+                                                                                                                                     "expr":  {
+                                                                                                                                                  "Literal":  {
+                                                                                                                                                                  "Value":  "\u0027#17365D\u0027"
+                                                                                                                                                              }
+                                                                                                                                              }
+                                                                                                                                 }
+                                                                                                                   }
+                                                                                                     },
+                                                                                       "fontSize":  {
+                                                                                                        "expr":  {
+                                                                                                                     "Literal":  {
+                                                                                                                                     "Value":  "16D"
+                                                                                                                                 }
+                                                                                                                 }
+                                                                                                    },
+                                                                                       "fontFamily":  {
+                                                                                                          "expr":  {
+                                                                                                                       "Literal":  {
+                                                                                                                                       "Value":  "\u0027Segoe UI Semibold\u0027"
+                                                                                                                                   }
+                                                                                                                   }
+                                                                                                      }
+                                                                                   }
+                                                                }
+                                                            ],
+                                                  "background":  [
+                                                                     {
+                                                                         "properties":  {
+                                                                                            "show":  {
+                                                                                                         "expr":  {
+                                                                                                                      "Literal":  {
+                                                                                                                                      "Value":  "true"
+                                                                                                                                  }
+                                                                                                                  }
+                                                                                                     },
+                                                                                            "color":  {
+                                                                                                          "solid":  {
+                                                                                                                        "color":  {
+                                                                                                                                      "expr":  {
+                                                                                                                                                   "Literal":  {
+                                                                                                                                                                   "Value":  "\u0027#FFFFFF\u0027"
+                                                                                                                                                               }
+                                                                                                                                               }
+                                                                                                                                  }
+                                                                                                                    }
+                                                                                                      },
+                                                                                            "transparency":  {
+                                                                                                                 "expr":  {
+                                                                                                                              "Literal":  {
+                                                                                                                                              "Value":  "0D"
+                                                                                                                                          }
+                                                                                                                          }
+                                                                                                             }
+                                                                                        }
+                                                                     }
+                                                                 ],
+                                                  "border":  [
+                                                                 {
+                                                                     "properties":  {
+                                                                                        "show":  {
+                                                                                                     "expr":  {
+                                                                                                                  "Literal":  {
+                                                                                                                                  "Value":  "false"
+                                                                                                                              }
+                                                                                                              }
+                                                                                                 }
+                                                                                    }
+                                                                 }
+                                                             ],
+                                                  "visualHeader":  [
+                                                                       {
+                                                                           "properties":  {
+                                                                                              "show":  {
+                                                                                                           "expr":  {
+                                                                                                                        "Literal":  {
+                                                                                                                                        "Value":  "false"
+                                                                                                                                    }
+                                                                                                                    }
+                                                                                                       }
+                                                                                          }
+                                                                       }
+                                                                   ]
+                                              },
+                   "drillFilterOtherVisuals":  true
+               }
+}

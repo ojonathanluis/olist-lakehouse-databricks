@@ -1,0 +1,94 @@
+cultureInfo pt-BR
+
+	linguisticMetadata =
+			{
+			    "Version":  "2.0.0",
+			    "Language":  "en-US",
+			    "Entities":  {
+			                     "gold_olist_vendas_consolidadas.pedidos":  {
+			                                                                    "Definition":  {
+			                                                                                       "Binding":  {
+			                                                                                                       "ConceptualEntity":  "gold_olist_vendas_consolidadas",
+			                                                                                                       "ConceptualProperty":  "Volume de Pedidos"
+			                                                                                                   }
+			                                                                                   },
+			                                                                    "State":  "Generated",
+			                                                                    "Terms":  [
+			                                                                                  {
+			                                                                                      "Volume de Pedidos":  {
+			                                                                                                      "State":  "Suggested",
+			                                                                                                      "Source":  {
+			                                                                                                                     "Type":  "External",
+			                                                                                                                     "Agent":  "PowerBI.VisualColumnRename"
+			                                                                                                                 },
+			                                                                                                      "Weight":  0.9
+			                                                                                                  }
+			                                                                                  }
+			                                                                              ]
+			                                                                },
+			                     "gold_olist_vendas_consolidadas.faturamento":  {
+			                                                                        "Definition":  {
+			                                                                                           "Binding":  {
+			                                                                                                           "ConceptualEntity":  "gold_olist_vendas_consolidadas",
+			                                                                                                           "ConceptualProperty":  "Faturamento Total"
+			                                                                                                       }
+			                                                                                       },
+			                                                                        "State":  "Generated",
+			                                                                        "Terms":  [
+			                                                                                      {
+			                                                                                          "Faturamento Total":  {
+			                                                                                                              "State":  "Suggested",
+			                                                                                                              "Source":  {
+			                                                                                                                             "Type":  "External",
+			                                                                                                                             "Agent":  "PowerBI.VisualColumnRename"
+			                                                                                                                         },
+			                                                                                                              "Weight":  0.9
+			                                                                                                          }
+			                                                                                      }
+			                                                                                  ]
+			                                                                    },
+			                     "gold_olist_vendas_consolidadas.tempo_médio_de_entrega":  {
+			                                                                                   "Definition":  {
+			                                                                                                      "Binding":  {
+			                                                                                                                      "ConceptualEntity":  "gold_olist_vendas_consolidadas",
+			                                                                                                                      "ConceptualProperty":  "Tempo Médio de Entrega"
+			                                                                                                                  }
+			                                                                                                  },
+			                                                                                   "State":  "Generated",
+			                                                                                   "Terms":  [
+			                                                                                                 {
+			                                                                                                     "Tempo Médio de Entrega":  {
+			                                                                                                                                    "State":  "Suggested",
+			                                                                                                                                    "Source":  {
+			                                                                                                                                                   "Type":  "External",
+			                                                                                                                                                   "Agent":  "PowerBI.VisualColumnRename"
+			                                                                                                                                               },
+			                                                                                                                                    "Weight":  0.9
+			                                                                                                                                }
+			                                                                                                 }
+			                                                                                             ]
+			                                                                               },
+			                     "gold_olist_vendas_consolidadas.ticket_médio":  {
+			                                                                         "Definition":  {
+			                                                                                            "Binding":  {
+			                                                                                                            "ConceptualEntity":  "gold_olist_vendas_consolidadas",
+			                                                                                                            "ConceptualProperty":  "Valor Total com Frete"
+			                                                                                                        }
+			                                                                                        },
+			                                                                         "State":  "Generated",
+			                                                                         "Terms":  [
+			                                                                                       {
+			                                                                                           "Valor Total com Frete":  {
+			                                                                                                                "State":  "Suggested",
+			                                                                                                                "Source":  {
+			                                                                                                                               "Type":  "External",
+			                                                                                                                               "Agent":  "PowerBI.VisualColumnRename"
+			                                                                                                                           },
+			                                                                                                                "Weight":  0.9
+			                                                                                                            }
+			                                                                                       }
+			                                                                                   ]
+			                                                                     }
+			                 }
+			}
+		contentType: json

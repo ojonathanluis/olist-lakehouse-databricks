@@ -1,0 +1,50 @@
+{
+    "$schema":  "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+    "name":  "27c08de364416e354130",
+    "position":  {
+                     "x":  40,
+                     "y":  24,
+                     "z":  100,
+                     "width":  1800,
+                     "height":  82,
+                     "tabOrder":  1
+                 },
+    "visual":  {
+                   "visualType":  "textbox",
+                   "objects":  {
+                                   "general":  [
+                                                   {
+                                                       "properties":  {
+                                                                          "paragraphs":  [
+                                                                                             {
+                                                                                                 "textRuns":  [
+                                                                                                                  {
+                                                                                                                      "value":  "OLIST  |  Análise de Vendas e Entregas",
+                                                                                                                      "textStyle":  {
+                                                                                                                                        "fontFamily":  "Segoe UI Semibold",
+                                                                                                                                        "fontSize":  "28pt",
+                                                                                                                                        "color":  "#FFFFFF"
+                                                                                                                                    }
+                                                                                                                  }
+                                                                                                              ]
+                                                                                             },
+                                                                                             {
+                                                                                                 "textRuns":  [
+                                                                                                                  {
+                                                                                                                      "value":  "Visão geral do desempenho comercial e logístico",
+                                                                                                                      "textStyle":  {
+                                                                                                                                        "fontFamily":  "Segoe UI",
+                                                                                                                                        "fontSize":  "12pt",
+                                                                                                                                        "color":  "#DCE6F1"
+                                                                                                                                    }
+                                                                                                                  }
+                                                                                                              ]
+                                                                                             }
+                                                                                         ]
+                                                                      }
+                                                   }
+                                               ]
+                               },
+                   "drillFilterOtherVisuals":  true
+               }
+}

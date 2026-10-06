@@ -1,0 +1,168 @@
+table gold_olist_vendas_consolidadas
+	lineageTag: ebd5c023-3a72-4469-84c1-fe6398c16eb2
+
+	measure 'Faturamento Total' = SUM('gold_olist_vendas_consolidadas'[valor_produto])
+		formatString: \R\$ #,0.00
+		displayFolder: Indicadores
+
+	measure 'Volume de Pedidos' = DISTINCTCOUNT('gold_olist_vendas_consolidadas'[order_id])
+		formatString: #,0
+		displayFolder: Indicadores
+
+	measure 'Valor Total com Frete' = SUM('gold_olist_vendas_consolidadas'[valor_total_com_frete])
+		formatString: \R\$ #,0.00
+		displayFolder: Indicadores
+
+	measure 'Tempo Médio de Entrega' = AVERAGE('gold_olist_vendas_consolidadas'[dias_para_entrega])
+		formatString: 0.0
+		displayFolder: Indicadores
+
+	column order_id
+		dataType: string
+		lineageTag: edd45c93-67f4-4170-bb5a-55daed8935ba
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: string
+		lineageTag: 1334a9a5-cad5-4816-a508-e560c9c9b06a
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_city
+		dataType: string
+		lineageTag: e8d8aba5-9bd9-4169-9d9d-6bdecf419d93
+		summarizeBy: none
+		sourceColumn: customer_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_state
+		dataType: string
+		lineageTag: 6fb9fb6f-2c01-4c79-80ff-9c37652050c9
+		summarizeBy: none
+		sourceColumn: customer_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_status
+		dataType: string
+		lineageTag: f881dc2a-cbf3-4402-af12-31c10644c1c6
+		summarizeBy: none
+		sourceColumn: order_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_purchase_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e13b5ede-eb49-4ff5-9cff-b6f7a1775698
+		summarizeBy: none
+		sourceColumn: order_purchase_timestamp
+
+		variation Variation
+			isDefault
+			relationship: 2cb85616-4d9b-428e-b7a2-787405900555
+			defaultHierarchy: LocalDateTable_df4a51bd-9b77-4713-b1c9-d4ad3bfff667.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_delivered_customer_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 11dd74ef-f9c0-4bce-80e1-13dbc702ceab
+		summarizeBy: none
+		sourceColumn: order_delivered_customer_date
+
+		variation Variation
+			isDefault
+			relationship: a482aa0a-a7a1-4e1c-b3f6-0d33c909c072
+			defaultHierarchy: LocalDateTable_78cf344c-830c-4bbc-bc22-1515df805afe.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_estimated_delivery_date
+		dataType: dateTime
+		formatString: General Date
+		summarizeBy: none
+		sourceColumn: order_estimated_delivery_date
+
+	column dias_para_entrega
+		dataType: int64
+		formatString: 0.00
+		lineageTag: 22df0bff-fa99-46be-b376-bc63529bc3df
+		summarizeBy: average
+		sourceColumn: dias_para_entrega
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: string
+		lineageTag: 2663084d-7428-4d60-bc8c-d4bccb34c276
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_category_name
+		dataType: string
+		lineageTag: 3adfe705-f21b-4abc-b567-568bbd376e09
+		summarizeBy: none
+		sourceColumn: product_category_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column valor_produto
+		dataType: double
+		formatString: \R\$ #,0.00;(\R\$ #,0.00);\R\$ #,0.00
+		lineageTag: b74bff25-99fd-40ff-bfad-06c0b6724398
+		summarizeBy: sum
+		sourceColumn: valor_produto
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column valor_frete
+		dataType: double
+		lineageTag: 4a13f316-9915-4fc5-a4e7-86b2aeef54a5
+		summarizeBy: sum
+		sourceColumn: valor_frete
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column valor_total_com_frete
+		dataType: double
+		formatString: \R\$ #,0.00;(\R\$ #,0.00);\R\$ #,0.00
+		lineageTag: 2fa7975c-5919-48fa-b297-4215acf5d5f7
+		summarizeBy: sum
+		sourceColumn: valor_total_com_frete
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	/// Primeiro dia do mês da compra, para ordenar a evolução mensal cronologicamente.
+	column 'Mês da Compra' = IF(ISBLANK([order_purchase_timestamp]), BLANK(), DATE(YEAR([order_purchase_timestamp]), MONTH([order_purchase_timestamp]), 1))
+		dataType: dateTime
+		formatString: MMM yyyy
+		lineageTag: dc36c596-6c64-4b75-a567-4a97aff318e9
+		summarizeBy: none
+
+	partition gold_olist_vendas_consolidadas = m
+		mode: import
+		source =
+				let
+				    Fonte = DatabricksMultiCloud.Catalogs("YOUR_DATABRICKS_SERVER", "YOUR_SQL_WAREHOUSE_HTTP_PATH", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0", Protocol=null]),
+				    workspace_Database = Fonte{[Name="workspace",Kind="Database"]}[Data],
+				    default_Schema = workspace_Database{[Name="default",Kind="Schema"]}[Data],
+				    gold_olist_vendas_consolidadas_Table = default_Schema{[Name="gold_olist_vendas_consolidadas",Kind="Table"]}[Data]
+				in
+				    gold_olist_vendas_consolidadas_Table
+

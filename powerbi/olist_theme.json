@@ -1,0 +1,14 @@
+{
+    "name":  "Olist Portfolio Clean",
+    "dataColors":  [
+                       "#17365D",
+                       "#3D6696",
+                       "#7799BF",
+                       "#B9CDE3",
+                       "#475569",
+                       "#94A3B8"
+                   ],
+    "background":  "#F7F8FA",
+    "foreground":  "#1F2937",
+    "tableAccent":  "#17365D"
+}

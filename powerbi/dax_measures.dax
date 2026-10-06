@@ -1,0 +1,4 @@
+Faturamento Total = SUM(gold_olist_vendas_consolidadas[valor_produto])
+Volume de Pedidos = DISTINCTCOUNT(gold_olist_vendas_consolidadas[order_id])
+Valor Total com Frete = SUM(gold_olist_vendas_consolidadas[valor_total_com_frete])
+Tempo Médio de Entrega = AVERAGE(gold_olist_vendas_consolidadas[dias_para_entrega])
